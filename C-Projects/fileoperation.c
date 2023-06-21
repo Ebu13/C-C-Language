@@ -1,0 +1,138 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+// Function to create a file
+void createFile() {
+    char fileName[100];
+    printf("Enter the name of the file to create: ");
+    scanf("%s", fileName);
+
+    // Creating and opening the file
+    FILE *file = fopen(fileName, "w");
+    if (file == NULL) {
+        printf("Failed to create the file.\n");
+        return;
+    }
+
+    printf("File created: %s\n", fileName);
+    fclose(file);
+}
+
+// Function to delete a file
+void deleteFile() {
+    char fileName[100];
+    printf("Enter the name of the file to delete: ");
+    scanf("%s", fileName);
+
+    // Deleting the file
+    if (remove(fileName) == 0) {
+        printf("File deleted: %s\n", fileName);
+    } else {
+        printf("Failed to delete the file.\n");
+    }
+}
+
+// Function to read a file
+void readFile() {
+    char fileName[100];
+    printf("Enter the name of the file to read: ");
+    scanf("%s", fileName);
+
+    // Opening the file and reading it line by line
+    FILE *file = fopen(fileName, "r");
+    if (file == NULL) {
+        printf("File not found.\n");
+        return;
+    }
+
+    char line[100];
+    printf("File content:\n");
+    while (fgets(line, sizeof(line), file) != NULL) {
+        printf("%s", line);
+    }
+
+    fclose(file);
+}
+
+// Function to write to a file
+void writeToFile() {
+    char fileName[100];
+    printf("Enter the name of the file to write to: ");
+    scanf("%s", fileName);
+
+    // Opening the file and writing data to it
+    FILE *file = fopen(fileName, "a");
+    if (file == NULL) {
+        printf("File not found.\n");
+        return;
+    }
+
+    char data[100];
+    printf("Enter the data to write to the file: ");
+    scanf(" %[^\n]s", data);
+
+    fprintf(file, "%s\n", data);
+    printf("Data written to the file.\n");
+
+    fclose(file);
+}
+
+// Function to completely erase the content of a file
+void eraseFileContent() {
+    char fileName[100];
+    printf("Enter the name of the file to erase its content: ");
+    scanf("%s", fileName);
+
+    // Opening the file and clearing its content
+    FILE *file = fopen(fileName, "w");
+    if (file == NULL) {
+        printf("File not found.\n");
+        return;
+    }
+
+    printf("The content of the file has been completely erased.\n");
+
+    fclose(file);
+}
+
+int main() {
+    int choice;
+    printf("Enter the file name as file.txt format.\n");
+    while (1) {
+        printf("\n--- Menu ---\n");
+        printf("1. Create File\n");
+        printf("2. Delete File\n");
+        printf("3. Read File\n");
+        printf("4. Write to File\n");
+        printf("5. Erase File Content\n");
+        printf("6. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                createFile();
+                break;
+            case 2:
+                deleteFile();
+                break;
+            case 3:
+                readFile();
+                break;
+            case 4:
+                writeToFile();
+                break;
+            case 5:
+                eraseFileContent();
+                break;
+            case 6:
+                printf("Exiting the program.\n");
+                exit(0);
+            default:
+                printf("Invalid choice. Please try again.\n");
+        }
+    }
+
+    return 0;
+}
+
