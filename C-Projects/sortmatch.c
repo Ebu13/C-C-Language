@@ -2,7 +2,7 @@
 
 // Bubble Sort algorithm
 void bubbleSort(int arr[], int n) {
-    int i, j;
+    int i, j, k;
     for (i = 0; i < n-1; i++) {
         for (j = 0; j < n-i-1; j++) {
             if (arr[j] > arr[j+1]) {
@@ -14,7 +14,7 @@ void bubbleSort(int arr[], int n) {
         }
         // Printing the state of the array at each step
         printf("Step %d: ", i+1);
-        for (int k = 0; k < n; k++) {
+        for (k = 0; k < n; k++) {
             printf("%d ", arr[k]);
         }
         printf("\n");
@@ -23,7 +23,7 @@ void bubbleSort(int arr[], int n) {
 
 // Selection Sort algorithm
 void selectionSort(int arr[], int n) {
-    int i, j, min_idx;
+    int i, j, min_idx, k;
     for (i = 0; i < n-1; i++) {
         min_idx = i;
         for (j = i+1; j < n; j++) {
@@ -36,7 +36,7 @@ void selectionSort(int arr[], int n) {
         arr[min_idx] = temp;
         // Printing the state of the array at each step
         printf("Step %d: ", i+1);
-        for (int k = 0; k < n; k++) {
+        for (k = 0; k < n; k++) {
             printf("%d ", arr[k]);
         }
         printf("\n");
@@ -45,7 +45,7 @@ void selectionSort(int arr[], int n) {
 
 // Insertion Sort algorithm
 void insertionSort(int arr[], int n) {
-    int i, key, j;
+    int i, key, j, k;
     for (i = 1; i < n; i++) {
         key = arr[i];
         j = i - 1;
@@ -56,7 +56,7 @@ void insertionSort(int arr[], int n) {
         arr[j+1] = key;
         // Printing the state of the array at each step
         printf("Step %d: ", i);
-        for (int k = 0; k < n; k++) {
+        for (k = 0; k < n; k++) {
             printf("%d ", arr[k]);
         }
         printf("\n");
