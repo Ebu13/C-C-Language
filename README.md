@@ -2,12 +2,6 @@
 
 This GitHub repository is created to share my coding and experiences in C and C++ languages. It contains projects covering various programming topics with different difficulty levels.
 
-## Projects
-
-The repository includes the following projects:
-
-- **Days Calculator**: This project takes a date input from the user and calculates which day of the week it corresponds to. The user can exit the program at any time or enter a new date. This project is a simple C program and it uses the standard C library (`stdio.h`). Additionally, no external libraries are used.
-
 ## How to Use?
 
 You can follow the steps below to run these projects on your local machine:
