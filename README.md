@@ -45,20 +45,25 @@ Yeni bir dal (branch) oluşturun:
 
     ```bash
     git checkout -b yeni-ozellik
-   ```
+    ```
+
 Değişikliklerinizi yapın ve bunları commit edin:
+
     ```bash
     git commit -am 'Yeni bir özellik ekle'
     ```
+
 Dalınıza (branch) itme yapın:
+
     ```bash
     git push origin yeni-ozellik
     ```
+
 Bir Pull Request (Çekme İsteği) açın.
 Lisans
 Bu projelerin lisans bilgileri için, lütfen LICENSE dosyasını inceleyin.
 
 İletişim
-Eğer herhangi bir sorunuz veya geri bildiriminiz varsa, lütfen bana e-posta ile ulaşın: [email protected]
+Eğer herhangi bir sorunuz veya geri bildiriminiz varsa, lütfen bana e-posta ile ulaşın: fulldevstudios@gmail.com
 
 Bu Markdown kodunu README.md dosyasına kopyalayabilir ve gerektiğinde projelerinizi ve iletişim bilgilerinizi güncelleyebilirsiniz.
