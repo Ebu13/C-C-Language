@@ -24,19 +24,19 @@ Bu repo içerisinde aşağıdaki projeler bulunmaktadır:
 
 Bu projeleri yerel makinenizde çalıştırmak için aşağıdaki adımları izleyebilirsiniz:
 
-1. Öncelikle bu projeyi klonlayın:
+**1.** Öncelikle bu projeyi klonlayın:
 
    ```bash
    git clone https://github.com/Ebu13/C-Language.git
    ```
 
-2. Klonladığınız dizine gidin:
+**2.** Klonladığınız dizine gidin:
 
    ```bash
    cd ProjeAdi
    ```
 
-3. Katkıda Bulunma
+**3.** Katkıda Bulunma
    Eğer bu projelere katkıda bulunmak isterseniz, lütfen aşağıdaki adımları takip edin:
 
 Bu reposu fork edin.
