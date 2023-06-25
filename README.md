@@ -47,15 +47,11 @@ Yeni bir dal (branch) oluşturun:
 
 Değişikliklerinizi yapın ve bunları commit edin:
 
-    ```bash
     git commit -am 'Yeni bir özellik ekle'
-    ```
 
 Dalınıza (branch) itme yapın:
 
-    ```bash
     git push origin yeni-ozellik
-    ```
 
 Bir Pull Request (Çekme İsteği) açın.
 Lisans
