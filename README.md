@@ -6,19 +6,11 @@ Bu GitHub deposu, C ve C++ dillerinde yaptığım kodlamaları ve deneyimlerimi 
 
 Bu repo içerisinde aşağıdaki projeler bulunmaktadır:
 
-**Proje 1:** (Proje Açıklaması veya Özet)
+**Proje Açıklaması veya Özet**
+Bu proje, kullanıcıdan bir tarih alır ve bu tarihin haftanın hangi gününe denk geldiğini hesaplar. Kullanıcı programı istediği zaman çıkış yapabilir veya yeni bir tarih girebilir.
 
-- Proje hakkında önemli ayrıntılar
-- Kullanılan teknolojiler ve kütüphaneler
-- Nasıl çalıştırılacağına dair talimatlar
-
-**Proje 2:** (Proje Açıklaması veya Özet)
-
-- Proje hakkında önemli ayrıntılar
-- Kullanılan teknolojiler ve kütüphaneler
-- Nasıl çalıştırılacağına dair talimatlar
-
-...
+**Kullanılan Teknolojiler ve Kütüphaneler**
+Bu proje basit bir C programıdır ve standart C kütüphanesi (`stdio.h`) kullanılmıştır. Ek olarak, herhangi bir harici kütüphane kullanılmamıştır.
 
 ## Nasıl Kullanılır?
 
@@ -26,24 +18,23 @@ Bu projeleri yerel makinenizde çalıştırmak için aşağıdaki adımları izl
 
 **1.** Öncelikle bu projeyi klonlayın:
 
-   ```bash
-   git clone https://github.com/Ebu13/C-Language.git
-   ```
+```bash
+git clone https://github.com/Ebu13/C-Language.git
+```
 
 **2.** Klonladığınız dizine gidin:
 
-   ```bash
-   cd ProjeAdi
-   ```
+```bash
+cd ProjeAdi
+```
 
 **3.** Katkıda Bulunma
-   Eğer bu projelere katkıda bulunmak isterseniz, lütfen aşağıdaki adımları takip edin:
+Eğer bu projelere katkıda bulunmak isterseniz, lütfen aşağıdaki adımları takip edin:
 
 Bu reposu fork edin.
 Yeni bir dal (branch) oluşturun:
 
     git checkout -b yeni-ozellik
-
 
 Değişikliklerinizi yapın ve bunları commit edin:
 
