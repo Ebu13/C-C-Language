@@ -1,54 +1,54 @@
-# C & C++ Dilinde Programlama
+# Programming in C & C++
 
-Bu GitHub deposu, C ve C++ dillerinde yaptığım kodlamaları ve deneyimlerimi paylaşmak için oluşturulmuştur. İçerisinde yer alan projeler, çeşitli programlama konularını kapsamaktadır ve farklı zorluk seviyelerine sahiptir.
+This GitHub repository is created to share my coding and experiences in C and C++ languages. It contains projects covering various programming topics with different difficulty levels.
 
-## Projeler
+## Projects
 
-Bu repo içerisinde aşağıdaki projeler bulunmaktadır:
+The repository includes the following projects:
 
-**Proje Açıklaması veya Özet**
-Bu proje, kullanıcıdan bir tarih alır ve bu tarihin haftanın hangi gününe denk geldiğini hesaplar. Kullanıcı programı istediği zaman çıkış yapabilir veya yeni bir tarih girebilir.
+**Days Calculator Project Description**
+This project takes a date input from the user and calculates which day of the week it corresponds to. The user can exit the program at any time or enter a new date.
 
-**Kullanılan Teknolojiler ve Kütüphaneler**
-Bu proje basit bir C programıdır ve standart C kütüphanesi (`stdio.h`) kullanılmıştır. Ek olarak, herhangi bir harici kütüphane kullanılmamıştır.
+**Technologies and Libraries Used**
+This project is a simple C program and it uses the standard C library (`stdio.h`). Additionally, no external libraries are used.
 
-## Nasıl Kullanılır?
+## How to Use?
 
-Bu projeleri yerel makinenizde çalıştırmak için aşağıdaki adımları izleyebilirsiniz:
+You can follow the steps below to run these projects on your local machine:
 
-**1.** Öncelikle bu projeyi klonlayın:
+**1.** First, clone this project:
 
-```bash
+````bash
 git clone https://github.com/Ebu13/C-Language.git
-```
 
-**2.** Klonladığınız dizine gidin:
+
+**2.** Navigate to the cloned directory:
 
 ```bash
-cd ProjeAdi
-```
+cd ProjectName
+````
 
-**3.** Katkıda Bulunma
-Eğer bu projelere katkıda bulunmak isterseniz, lütfen aşağıdaki adımları takip edin:
+**3.** Contributing
+If you would like to contribute to these projects, please follow these steps:
 
-Bu reposu fork edin.
-Yeni bir dal (branch) oluşturun:
+Fork this repository.
+Create a new branch:
 
-    git checkout -b yeni-ozellik
+    git checkout -b new-feature
 
-Değişikliklerinizi yapın ve bunları commit edin:
+Make your changes and commit them:
 
-    git commit -am 'Yeni bir özellik ekle'
+    git commit -am 'Add a new feature'
 
-Dalınıza (branch) itme yapın:
+Push your branch:
 
-    git push origin yeni-ozellik
+    git push origin new-feature
 
-Bir Pull Request (Çekme İsteği) açın.
-Lisans
-Bu projelerin lisans bilgileri için, lütfen LICENSE dosyasını inceleyin.
+Open a Pull Request.
+License
+Please see the LICENSE file for the license information for these projects.
 
-İletişim
-Eğer herhangi bir sorunuz veya geri bildiriminiz varsa, lütfen bana e-posta ile ulaşın: fulldevstudios@gmail.com
+Contact
+If you have any questions or feedback, please reach out to me via email: fulldevstudios@gmail.com
 
-Bu Markdown kodunu README.md dosyasına kopyalayabilir ve gerektiğinde projelerinizi ve iletişim bilgilerinizi güncelleyebilirsiniz.
+You can copy this Markdown code to the README.md file and update your projects and contact information as needed.
