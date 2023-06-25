@@ -42,10 +42,8 @@ Bu projeleri yerel makinenizde çalıştırmak için aşağıdaki adımları izl
 Bu reposu fork edin.
 Yeni bir dal (branch) oluşturun:
 
-
-    ```bash
     git checkout -b yeni-ozellik
-    ```
+
 
 Değişikliklerinizi yapın ve bunları commit edin:
 
