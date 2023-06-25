@@ -26,11 +26,15 @@ Bu projeleri yerel makinenizde çalıştırmak için aşağıdaki adımları izl
 1. Öncelikle bu projeyi klonlayın:
 
    ```bash
-   git clone https://github.com/KullaniciAdi/ProjeAdi.git
+   git clone https://github.com/Ebu13/C-Language.git
    ```
 
 1. Klonladığınız dizine gidin:
+   
+   ```bash
    cd ProjeAdi
+   ```
+   
 1. İlgili projeyi derleyin ve çalıştırın:
    g++ dosya.cpp -o program
    ./program
