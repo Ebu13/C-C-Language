@@ -6,13 +6,13 @@ Bu GitHub deposu, C ve C++ dillerinde yaptığım kodlamaları ve deneyimlerimi 
 
 Bu repo içerisinde aşağıdaki projeler bulunmaktadır:
 
-1. **Proje 1:** (Proje Açıklaması veya Özet)
+**Proje 1:** (Proje Açıklaması veya Özet)
 
    - Proje hakkında önemli ayrıntılar
    - Kullanılan teknolojiler ve kütüphaneler
    - Nasıl çalıştırılacağına dair talimatlar
 
-2. **Proje 2:** (Proje Açıklaması veya Özet)
+**Proje 2:** (Proje Açıklaması veya Özet)
    - Proje hakkında önemli ayrıntılar
    - Kullanılan teknolojiler ve kütüphaneler
    - Nasıl çalıştırılacağına dair talimatlar

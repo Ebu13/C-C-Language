@@ -69,7 +69,7 @@ int main() {
         scanf(" %c", &exitOption);
         
         if (exitOption == 'y' || exitOption == 'Y') {
-            break; // Döngüden çýkýþ yap
+            break;
         }
     }
     
