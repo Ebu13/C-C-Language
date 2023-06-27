@@ -61,7 +61,7 @@ void writeToFile() {
     scanf("%s", fileName);
 
     // Opening the file and writing data to it
-    FILE *file = fopen(fileName, "a");
+    FILE *file = fopen(fileName, "a+");
     if (file == NULL) {
         printf("File not found.\n");
         return;
