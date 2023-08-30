@@ -1,12 +1,13 @@
 #include <stdio.h>
-//A strong number is a number where the sum of the factorials of its digits 
-//is equal to the number itself. In other words, if we take each digit of the number, 
-//calculate the factorial of that digit, and then add up all these factorials, 
-//the resulting sum will be equal to the original number.
 
 // Function to calculate factorial of a number
-int factorial(int number) {
-    int product = 1;
+long long int factorial(int number) {
+    if (number < 0) {
+        printf("Error: Factorial of a negative number is undefined.\n");
+        return -1;
+    }
+    
+    long long int product = 1;
     int i;
     
     for (i = number; i > 0; i--) {
@@ -17,29 +18,35 @@ int factorial(int number) {
 }
 
 int main() {
-    int number, originalNumber;
+    int inputNumber, originalNumber;
     
     printf("Enter a number: ");
-    scanf("%d", &number);
-    originalNumber = number;
+    if (scanf("%d", &inputNumber) != 1) {
+        printf("Error: Invalid input.\n");
+        return 1;
+    }
+    originalNumber = inputNumber;
     
     int remainder;
-    int sum = 0;
+    long long int factorialSum = 0;
     
     // Calculate the sum of factorials of digits
-    while (number > 0) {
-        remainder = number % 10;
-        number = number / 10;
+    while (inputNumber > 0) {
+        remainder = inputNumber % 10;
+        inputNumber = inputNumber / 10;
         
-        int digitFactorial = factorial(remainder);
-        printf("%d! = %d \n", remainder, digitFactorial);
-        sum += digitFactorial;
+        long long int digitFactorial = factorial(remainder);
+        if (digitFactorial == -1) {
+            return 1;
+        }
+        printf("%d! = %lld \n", remainder, digitFactorial);
+        factorialSum += digitFactorial;
     }
     
-    printf("Sum = %d \n", sum);
+    printf("Sum = %lld \n", factorialSum);
     
     // Check if the number is a strong number
-    if (sum == originalNumber)
+    if (factorialSum == originalNumber)
         printf("It is a strong number.\n");
     else
         printf("It is not a strong number.\n");

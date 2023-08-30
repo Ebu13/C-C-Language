@@ -219,11 +219,8 @@
             }   
           } 
           if(kontrol==1) break; 
-           
-                
+                    
       } 
-       
-       
        
       getch(); 
   } 

@@ -1,34 +1,45 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-struct terim {
-  int katsayi;
-  int derece;
+struct term {
+  int coefficient;
+  int degree;
 };
 
-int sabit_sayi(struct terim *polinom) {
-  if (polinom == NULL)
+int constant_term(struct term *polynomial, int num_terms) {
+  if (polynomial == NULL || num_terms <= 0)
     return 0;
   
-  if (polinom->derece == 0)
-    return polinom->katsayi;
+  if (polynomial[0].degree == 0)
+    return polynomial[0].coefficient;
   
-  return sabit_sayi(polinom + 1);
+  return constant_term(polynomial + 1, num_terms - 1);
 }
 
 int main() {
-  struct terim polinom[100];
-  int n, i;
+  struct term *polynomial;
+  int num_terms, i;
   
-  printf("Polinom terim sayisini girin: ");
-  scanf("%d", &n);
+  printf("Enter the number of polynomial terms: ");
+  scanf("%d", &num_terms);
   
-  printf("Polinom terimlerini girin (katsayi derece):\n");
-  for (i = 0; i < n; i++) {
-    scanf("%d %d", &(polinom[i].katsayi), &(polinom[i].derece));
+  // Memory allocation for polynomial terms
+  polynomial = (struct term*) malloc(num_terms * sizeof(struct term));
+  if (polynomial == NULL) {
+    printf("Memory allocation failed. Exiting the program.\n");
+    return 1;
   }
   
-  int sabit = sabit_sayi(polinom);
-  printf("Sabit sayi: %d\n", sabit);
+  printf("Enter the polynomial terms (coefficient degree):\n");
+  for (i = 0; i < num_terms; i++) {
+    scanf("%d %d", &(polynomial[i].coefficient), &(polynomial[i].degree));
+  }
+  
+  int constant = constant_term(polynomial, num_terms);
+  printf("Constant term: %d\n", constant);
+  
+  // Free allocated memory
+  free(polynomial);
   
   return 0;
 }

@@ -1,36 +1,39 @@
 #include <stdio.h>
+#include <stdbool.h>
 
-int toplamHesapla(int kuvvet, int dizi[]) {
-    // Eleman sayisini 2'nin kuvveti yapma kontrolu
-    int elemanSayisi = 1 << kuvvet;
-    int i, toplam = 0;
+// Function to calculate the sum of array elements
+int calculateSum(int power, int array[]) {
+    // Calculate the number of elements as the power of 2
+    int elementCount = 1 << power;
+    int sum = 0, i;
 
-    for (i = 0; i < elemanSayisi; i++) {
-        if (dizi[i] <= 0) {
-            printf("Dizi elemanlari pozitif olmalidir!\n");
+    for (i = 0; i < elementCount; i++) {
+        // Check if array elements are positive
+        if (array[i] <= 0) {
+            printf("Array elements must be positive!\n");
             return 0;
         }
-        toplam += dizi[i];
+        sum += array[i];
     }
 
-    return toplam;
+    return sum;
 }
 
 int main() {
-    int kuvvet, i;
-    printf("Dizinin eleman sayisi 2'nin kuvveti olacak sekilde kuvvet kac olacak? ");
-    scanf("%d", &kuvvet);
+    int power, i;
+    printf("What should be the power of 2 for the number of array elements? ");
+    scanf("%d", &power);
 
-    int elemanSayisi = 1 << kuvvet;
-    int dizi[elemanSayisi];
+    int elementCount = 1 << power;
+    int array[elementCount];
 
-    printf("%d eleman girin:\n", elemanSayisi);
-    for (i = 0; i < elemanSayisi; i++) {
-        scanf("%d", &dizi[i]);
+    printf("Enter %d elements:\n", elementCount);
+    for (i = 0; i < elementCount; i++) {
+        scanf("%d", &array[i]);
     }
 
-    int toplam = toplamHesapla(kuvvet, dizi);
-    printf("Dizideki sayilarin toplami: %d\n", toplam);
+    int sum = calculateSum(power, array);
+    printf("Sum of the array elements: %d\n", sum);
 
     return 0;
 }

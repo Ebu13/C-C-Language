@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 // Linear Search
 int linearSearch(int array[], int N, int target) {
@@ -66,23 +67,79 @@ int main() {
     printf("Enter the size of the array: ");
     scanf("%d", &N);
     
-    int array[N];
+    if (N <= 0 || N > 100) {
+        printf("Invalid array size. Please enter a size between 1 and 100.\n");
+        return 0;
+    }
+    
+    int* array = (int*)malloc(N * sizeof(int));
+    if (array == NULL) {
+        printf("Memory allocation failed.\n");
+        return 0;
+    }
+    
     printf("Enter the elements of the array:\n");
     int i;
     for (i = 0; i < N; i++) {
         scanf("%d", &array[i]);
     }
     
-    int target;
-    printf("Enter the number to search for: ");
-    scanf("%d", &target);
+    printf("Choose an option:\n");
+    printf("1. Linear Search\n");
+    printf("2. Binary Search\n");
+    printf("3. Bubble Sort\n");
+    printf("4. Selection Sort\n");
+    int option;
+    scanf("%d", &option);
     
-    int result = linearSearch(array, N, target);
-    if (result >= 0) {
-        printf("The number %d is found at position %d.\n", target, result + 1);
-    } else {
-        printf("The number %d is not found.\n", target);
+    switch (option) {
+        case 1:
+            printf("Enter the number to search for: ");
+            int target;
+            scanf("%d", &target);
+            int result = linearSearch(array, N, target);
+            if (result >= 0) {
+                printf("The number %d is found at position %d.\n", target, result + 1);
+            } else {
+                printf("The number %d is not found.\n", target);
+            }
+            break;
+        case 2:
+            printf("Enter the number to search for: ");
+            int target2;
+            scanf("%d", &target2);
+            bubbleSort(array, N);
+            int result2 = binarySearch(array, N, target2);
+            if (result2 >= 0) {
+                printf("The number %d is found at position %d.\n", target2, result2 + 1);
+            } else {
+                printf("The number %d is not found.\n", target2);
+            }
+            break;
+        case 3:
+            bubbleSort(array, N);
+            printf("The array has been sorted using Bubble Sort.\n");
+            printf("Sorted array: ");
+            for (i = 0; i < N; i++) {
+                printf("%d ", array[i]);
+            }
+            printf("\n");
+            break;
+        case 4:
+            selectionSort(array, N);
+            printf("The array has been sorted using Selection Sort.\n");
+            printf("Sorted array: ");
+            for (i = 0; i < N; i++) {
+                printf("%d ", array[i]);
+            }
+            printf("\n");
+            break;
+        default:
+            printf("Invalid option.\n");
+            break;
     }
+    
+    free(array);
     
     return 0;
 }
