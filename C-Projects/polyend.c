@@ -23,23 +23,24 @@ int main() {
   printf("Enter the number of polynomial terms: ");
   scanf("%d", &num_terms);
   
-  // Memory allocation for polynomial terms
+  // Bellek tahsisi
   polynomial = (struct term*) malloc(num_terms * sizeof(struct term));
   if (polynomial == NULL) {
-    printf("Memory allocation failed. Exiting the program.\n");
+    printf("Bellek tahsisi basarisiz. Program sonlandiriliyor.\n");
     return 1;
   }
   
-  printf("Enter the polynomial terms (coefficient degree):\n");
+  printf("Polinom terimlerini girin (katsayý derece):\n");
   for (i = 0; i < num_terms; i++) {
     scanf("%d %d", &(polynomial[i].coefficient), &(polynomial[i].degree));
   }
   
   int constant = constant_term(polynomial, num_terms);
-  printf("Constant term: %d\n", constant);
+  printf("Sabit terim: %d\n", constant);
   
-  // Free allocated memory
+  // Ayrýlan belleði serbest býrak
   free(polynomial);
   
   return 0;
 }
+
