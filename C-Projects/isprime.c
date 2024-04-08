@@ -1,30 +1,30 @@
 #include <stdio.h>
 
-// Function to check if a number is prime
-int isPrime(int num) {
+// Bir sayýnýn asal olup olmadýðýný kontrol eden fonksiyon
+int asalMi(int num) {
     if (num <= 1) {
-        return 0;  // 0 and 1 are not prime numbers.
+        return 0;  // 0 ve 1 asal sayý deðildir.
     }
     int i;
     for (i = 2; i * i <= num; i++) {
         if (num % i == 0) {
-            return 0;  // Found a divisor, not a prime.
+            return 0;  // Bölen bulundu, asal deðil.
         }
     }
 
-    return 1;  // No divisors found, it is a prime number.
+    return 1;  // Bölen bulunamadý, asal sayýdýr.
 }
 
 int main() {
     int num;
 
-    printf("Enter a number: ");
+    printf("Bir sayi giriniz: ");
     scanf("%d", &num);
 
-    if (isPrime(num)) {
-        printf("%d is a prime number.\n", num);
+    if (asalMi(num)) {
+        printf("%d bir asal sayidir.\n", num);
     } else {
-        printf("%d is not a prime number.\n", num);
+        printf("%d bir asal sayi degildir.\n", num);
     }
 
     return 0;

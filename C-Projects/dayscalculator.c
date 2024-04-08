@@ -1,63 +1,63 @@
 #include <stdio.h>
 
-// Function to check if a year is a leap year
-int isLeapYear(int year) {
-    if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+// Bir yýlýn artýk yýl olup olmadýðýný kontrol eden fonksiyon
+int artikYilMi(int yil) {
+    if ((yil % 4 == 0 && yil % 100 != 0) || yil % 400 == 0) {
         return 1;
     }
     return 0;
 }
 
-// Function to calculate the total days passed until the given date
-int calculateTotalDays(int day, int month, int year) {
-    int monthDays[] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-    int totalDays = 0, i;
+// Verilen tarihe kadar geçen toplam günleri hesaplayan fonksiyon
+int toplamGunHesapla(int gun, int ay, int yil) {
+    int ayGunleri[] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    int toplamGun = 0, i;
     
-    // Add contributions of previous years
-    for (i = 1; i < year; i++) {
-        totalDays += 365 + isLeapYear(i);
+    // Önceki yýllarýn katkýlarýný ekle
+    for (i = 1; i < yil; i++) {
+        toplamGun += 365 + artikYilMi(i);
     }
     
-    // Add contributions of previous months
-    for (i = 1; i < month; i++) {
-        totalDays += monthDays[i];
+    // Önceki aylarýn katkýlarýný ekle
+    for (i = 1; i < ay; i++) {
+        toplamGun += ayGunleri[i];
     }
     
-    // Add the entered day
-    totalDays += day;
+    // Girilen günü ekle
+    toplamGun += gun;
     
-    // Adjust for leap year
-    if (month > 2 && isLeapYear(year)) {
-        totalDays += 1;
+    // Artýk yýlý düzelt
+    if (ay > 2 && artikYilMi(yil)) {
+        toplamGun += 1;
     }
     
-    return totalDays;
+    return toplamGun;
 }
 
-// Function to find the day of the week
-void findDayOfWeek(int totalDays) {
-    char* daysOfWeek[] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
-    int dayOfWeek = totalDays % 7;
-    printf("Day of the week: %s\n", daysOfWeek[dayOfWeek]);
+// Haftanýn gününü bulan fonksiyon
+void gunuBul(int toplamGun) {
+    char* haftaninGunleri[] = {"Pazar", "Pazartesi", "Salý", "Çarþamba", "Perþembe", "Cuma", "Cumartesi"};
+    int haftaninGunu = toplamGun % 7;
+    printf("Haftanin gunu: %s\n", haftaninGunleri[haftaninGunu]);
 }
 
 int main() {
-    int day, month, year;
-    char exitOption;
+    int gun, ay, yil;
+    char cikisSecenegi;
     
     while (1) {
-        printf("Enter the date:\n");
-        printf("Day: "); scanf("%d", &day);
-        printf("Month: "); scanf("%d", &month);
-        printf("Year: "); scanf("%d", &year);
+        printf("Tarihi girin:\n");
+        printf("Gun: "); scanf("%d", &gun);
+        printf("Ay: "); scanf("%d", &ay);
+        printf("Yll: "); scanf("%d", &yil);
         
-        int totalDays = calculateTotalDays(day, month, year);
-        findDayOfWeek(totalDays);
+        int toplamGun = toplamGunHesapla(gun, ay, yil);
+        gunuBul(toplamGun);
         
-        printf("Do you want to exit? (y/n): ");
-        scanf(" %c", &exitOption);
+        printf("Cikmak istiyor musunuz? (e)(Devam Etmek icin herhangi bir harf veya sayi gir.): ");
+        scanf(" %c", &cikisSecenegi);
         
-        if (exitOption == 'y' || exitOption == 'Y') {
+        if (cikisSecenegi == 'e' || cikisSecenegi == 'E') {
             break;
         }
     }

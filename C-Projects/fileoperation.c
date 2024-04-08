@@ -2,140 +2,141 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MAX_FILENAME_LENGTH 100
+#define MAKSIMUM_DOSYA_ADI_UZUNLUGU 100
 
-// Function to get file name from user
-void getFileName(char *fileName) {
-    printf("Enter the name of the file: ");
-    scanf("%s", fileName);
+// Kullanýcýdan dosya adýný almak için fonksiyon
+void dosyaAdiniAl(char *dosyaAdi) {
+    printf("Dosyanin adini girin: ");
+    scanf("%s", dosyaAdi);
 }
 
-// Function to create a file
-void createFile() {
-    char fileName[MAX_FILENAME_LENGTH];
-    getFileName(fileName);
+// Bir dosya oluþturmak için fonksiyon
+void dosyaOlustur() {
+    char dosyaAdi[MAKSIMUM_DOSYA_ADI_UZUNLUGU];
+    dosyaAdiniAl(dosyaAdi);
 
-    // Creating and opening the file
-    FILE *file = fopen(fileName, "w");
-    if (file == NULL) {
-        printf("Failed to create the file.\n");
+    // Dosyayý oluþturma ve açma
+    FILE *dosya = fopen(dosyaAdi, "w");
+    if (dosya == NULL) {
+        printf("Dosya olusturulamadi.\n");
         return;
     }
 
-    printf("File created: %s\n", fileName);
-    fclose(file);
+    printf("Dosya olusturuldu: %s\n", dosyaAdi);
+    fclose(dosya);
 }
 
-// Function to delete a file
-void deleteFile() {
-    char fileName[MAX_FILENAME_LENGTH];
-    getFileName(fileName);
+// Bir dosyayý silmek için fonksiyon
+void dosyaSil() {
+    char dosyaAdi[MAKSIMUM_DOSYA_ADI_UZUNLUGU];
+    dosyaAdiniAl(dosyaAdi);
 
-    // Deleting the file
-    if (remove(fileName) == 0) {
-        printf("File deleted: %s\n", fileName);
+    // Dosyayý silme
+    if (remove(dosyaAdi) == 0) {
+        printf("Dosya silindi: %s\n", dosyaAdi);
     } else {
-        printf("Failed to delete the file.\n");
+        printf("Dosya silinemedi.\n");
     }
 }
 
-// Function to read a file
-void readFile() {
-    char fileName[MAX_FILENAME_LENGTH];
-    getFileName(fileName);
+// Bir dosyayý okumak için fonksiyon
+void dosyayiOku() {
+    char dosyaAdi[MAKSIMUM_DOSYA_ADI_UZUNLUGU];
+    dosyaAdiniAl(dosyaAdi);
 
-    // Opening the file and reading it line by line
-    FILE *file = fopen(fileName, "r");
-    if (file == NULL) {
-        printf("File not found.\n");
+    // Dosyayý açma ve satýr satýr okuma
+    FILE *dosya = fopen(dosyaAdi, "r");
+    if (dosya == NULL) {
+        printf("Dosya bulunamadi.\n");
         return;
     }
 
-    char line[100];
-    printf("File content:\n");
-    while (fgets(line, sizeof(line), file) != NULL) {
-        printf("%s", line);
+    char satir[100];
+    printf("Dosya icerigi:\n");
+    while (fgets(satir, sizeof(satir), dosya) != NULL) {
+        printf("%s", satir);
     }
 
-    fclose(file);
+    fclose(dosya);
 }
 
-// Function to write to a file
-void writeToFile() {
-    char fileName[MAX_FILENAME_LENGTH];
-    getFileName(fileName);
+// Bir dosyaya yazmak için fonksiyon
+void dosyayaYaz() {
+    char dosyaAdi[MAKSIMUM_DOSYA_ADI_UZUNLUGU];
+    dosyaAdiniAl(dosyaAdi);
 
-    // Opening the file and writing data to it
-    FILE *file = fopen(fileName, "a+");
-    if (file == NULL) {
-        printf("File not found.\n");
+    // Dosyayý açma ve veri yazma
+    FILE *dosya = fopen(dosyaAdi, "a+");
+    if (dosya == NULL) {
+        printf("Dosya bulunamadi.\n");
         return;
     }
 
-    char data[100];
-    printf("Enter the data to write to the file: ");
-    scanf(" %[^\n]s", data);
+    char veri[100];
+    printf("Dosyaya yazilacak veriyi girin: ");
+    scanf(" %[^\n]s", veri);
 
-    fprintf(file, "%s\n", data);
-    printf("Data written to the file.\n");
+    fprintf(dosya, "%s\n", veri);
+    printf("Veri dosyaya yazildi.\n");
 
-    fclose(file);
+    fclose(dosya);
 }
 
-// Function to completely erase the content of a file
-void eraseFileContent() {
-    char fileName[MAX_FILENAME_LENGTH];
-    getFileName(fileName);
+// Bir dosyanýn içeriðini tamamen silmek için fonksiyon
+void dosyaIceriginiSil() {
+    char dosyaAdi[MAKSIMUM_DOSYA_ADI_UZUNLUGU];
+    dosyaAdiniAl(dosyaAdi);
 
-    // Opening the file and clearing its content
-    FILE *file = fopen(fileName, "w");
-    if (file == NULL) {
-        printf("File not found.\n");
+    // Dosyayý açma ve içeriðini temizleme
+    FILE *dosya = fopen(dosyaAdi, "w");
+    // w yeniden yazma modunda olduðu için içini boþaltýp açýyor. w yerine a olsaydý
+	// ekleme modunda olurdu. 
+    if (dosya == NULL) {
+        printf("Dosya bulunamadi.\n");
         return;
     }
-
-    printf("The content of the file has been completely erased.\n");
-
-    fclose(file);
+    printf("Dosyanin icerigi tamamen silindi.\n");
+    fclose(dosya);
 }
 
 int main() {
-    int choice;
-    printf("Enter the file name in the format file.txt.\n");
+    int secim;
+    printf("Dosya adini dosya.txt formatinda girin.\n");
     while (1) {
         printf("\n--- Menu ---\n");
-        printf("1. Create File\n");
-        printf("2. Delete File\n");
-        printf("3. Read File\n");
-        printf("4. Write to File\n");
-        printf("5. Erase File Content\n");
-        printf("6. Exit\n");
-        printf("Enter your choice: ");
-        scanf("%d", &choice);
+        printf("1. Dosya Olustur\n");
+        printf("2. Dosya Sil\n");
+        printf("3. Dosyayi Oku\n");
+        printf("4. Dosyaya Yaz\n");
+        printf("5. Dosya Icerigini Sil\n");
+        printf("6. Cikis\n");
+        printf("Bir secim yapin: ");
+        scanf("%d", &secim);
 
-        switch (choice) {
+        switch (secim) {
             case 1:
-                createFile();
+                dosyaOlustur();
                 break;
             case 2:
-                deleteFile();
+                dosyaSil();
                 break;
             case 3:
-                readFile();
+                dosyayiOku();
                 break;
             case 4:
-                writeToFile();
+                dosyayaYaz();
                 break;
             case 5:
-                eraseFileContent();
+                dosyaIceriginiSil();
                 break;
             case 6:
-                printf("Exiting the program.\n");
+                printf("Programdan cikiliyor.\n");
                 exit(0);
             default:
-                printf("Invalid choice. Please try again.\n");
+                printf("Gecersiz secim. Lütfen tekrar deneyin.\n");
         }
     }
 
     return 0;
 }
+

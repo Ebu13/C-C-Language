@@ -3,16 +3,22 @@
 
 int main() {
     int i;
-    FILE *filePtr = fopen("test.txt", "a"); // Open the file in append mode
+    FILE *filePtr = fopen("test.txt", "a"); 
+    //Ekleme modunda açýyor.Kaldýðý yerden devam ediyor en son karakterden.
     if (filePtr == NULL) {
-        printf("Failed to open the file.\n"); // Print an error message if the file cannot be opened
-        return 1; // Return an error code
+        printf("Dosya Hatasý.\n"); 
+        return 1;
     }
-    fprintf(filePtr, "%s", "File operations"); // Write "File operations" to the file
+    //Satýr atladýktan sonra ilk satýra "Dosya Ýþlemleri" yazdýrdý ve alt satýra geçti.
+    fprintf(filePtr, "%s", "\nDosya Ýþlemleri");
+    
+    // 1 den 5 e kadarki tüm sayýlarý alt alta yazdýrýyor.
     for (i = 0; i < 5; i++) {
-        fprintf(filePtr, "\n%d", i + 1); // Write numbers 1 to 5 on separate lines
+        fprintf(filePtr, "\n%d", i + 1); 
     }
-    fclose(filePtr); // Close the file
-    printf("Added.\n"); // Print a success message
+    fclose(filePtr);
+    // txt dosyasýnda çýkýldý.
+    printf("Eklendi.\n");
+    // Konsol ekranýna "Eklendi" mesajý verildi
     return 0;
 }
